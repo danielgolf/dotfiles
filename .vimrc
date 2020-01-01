@@ -30,7 +30,7 @@ set ffs=unix,dos,mac                " use unix as the standard file type
 set updatetime=100                  " gitgutter
 set timeoutlen=1000
 set ttimeoutlen=5
-set cul
+" set cul
 
 set showmatch                       " show matching brackets when cursor is over them
 set mat=2
@@ -121,17 +121,16 @@ endif
 " #############################
 
 " powerline aktivieren
-set rtp+=/usr/lib/python3.8/site-packages/powerline/bindings/vim/
-set laststatus=2
+" set rtp+=/usr/local/lib/python3.7/dist-packages/powerline/bindings/vim/
+" set laststatus=2
 
 " NERDtree
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 " fzf keybind
-map ; :FZF
+" map ; :FZF
 
-" ayu theme
-if has("termguicolors")
-  set termguicolors
-  let ayucolor="mirage"
-  colorscheme ayu
+" theme
+if &t_Co > 15 || has("gui_running")
+  colorscheme gruvbox
+  set background=dark
 endif

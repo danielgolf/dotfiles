@@ -8,29 +8,17 @@ alias sudo='sudo '
 alias rm='rm -I'
 
 # orte
-alias des='cd ~/Schreibtisch'
-alias box='cd ~/Dropbox'
-alias sem='cd ~/Dropbox/wise1920'
-alias repos='cd ~/Repositories'
 alias ..='cd ../'
 alias ...='cd ../../'
 
 # programme
 alias top='htop'
 alias diff='colordiff'
-alias xclip='xclip -sel c'
-alias pacman='sudo pacman'
-alias chrome='google-chrome-stable'
-alias ssh='TERM=xterm-256color ssh'
 
 # usb
 alias mount='udisksctl mount -b'
 alias unmount='udisksctl unmount -b'
 alias usboff='udisksctl power-off -b'
-
-# ssh
-alias sraspi='ssh pi@192.168.178.38'
-alias sraspif='nautilus sftp://pi@raspberryserver &> /dev/null &'
 
 # python
 alias pyc='ipython'
@@ -46,6 +34,3 @@ alias log='git log'
 alias status='git status'
 alias checkout='git checkout'
 alias branch='git branch -v'
-
-# misc
-alias wetter='curl "wttr.in/Berlin?lang=de"'

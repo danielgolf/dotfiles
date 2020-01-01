@@ -6,10 +6,10 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/daniel/.oh-my-zsh"
+export ZSH="/home/pi/.oh-my-zsh"
 
 # set default user - important for ZSH_THEME
-export DEFAULT_USER="daniel"
+export DEFAULT_USER="pi"
 
 # user zsh prompt for virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -78,7 +78,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    colored-man-pages
+    # colored-man-pages
     virtualenv
     history
     # vi-mode
@@ -123,4 +123,4 @@ fi
 # export KEYTIMEOUT=1
 
 # nice system info
-pfetch
+# pfetch

@@ -1,14 +1,3 @@
-Xft.dpi: 128
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
-
-rofi.dpi: 128
-Xcursor.size: 30
-
 ! ###############################
 !  _   _ ____               _   
 ! | | | |  _ \ __  ____   _| |_ 
@@ -18,16 +7,17 @@ Xcursor.size: 30
 !
 ! ###############################
 
-urxvt.font: xft:DejaVuSansMono Nerd Font Mono:style=Book:size=11
-urxvt.boldFont: xft:DejaVu Sans Mono:style=Bold:size=11
-urxvt.letterSpace: -1.2
-
-urxvt.cursorBlink: true
-urxvt.cursorUnderline: true
-urxvt.saveline: 10000
-urxvt.scrollBar: false
-urxvt.internalBorder: 4
-urxvt.pointerBlank: true
+URxvt.font: xft:DejaVu Sans Mono:style=Book:size=11,xft:PowerlineSymbols:style=Medium:size=11
+URxvt.internalBorder: 4
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.urgentOnBell: false
+URxvt.depth: 32
+URxvt.urlLauncher: chromium
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 !! ### colors ###
 ! special

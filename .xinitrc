@@ -32,7 +32,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xrandr --output DisplayPort-0 --off --output HDMI-A-0 --off --output DVI-D-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-D-1 --mode 1920x1080 --pos 1920x0 --rotate normal &
 $HOME/.fehbg &
-dropbox &
+urxvtd -f &
 exec i3     # >> /home/daniel/.i3.log 2>&1
