@@ -9,3 +9,4 @@
 *.jpg
 *.png
 !screenshot.jpg
+*.tar.gz
