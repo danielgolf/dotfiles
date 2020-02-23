@@ -23,8 +23,8 @@ set history=100		                " keep 50 lines of command line history
 set ruler		                    " show the cursor position all the time
 set showcmd		                    " display incomplete commands
 set incsearch		                " do incremental searching
+set ignorecase                      " ignore case when searching
 set so=5                            " try to keep lines before and after the cursor
-set smartcase                       " ignore case when searching
 set noerrorbells                    " no annoying sounds on errors
 set ffs=unix,dos,mac                " use unix as the standard file type
 set updatetime=100                  " gitgutter
@@ -40,8 +40,9 @@ set lbr                             " Linebreak on 500 characters
 set tw=200
 
 " metadateien in speichern
-set backupdir^=$HOME/.vim/backup/
+set undofile                        " Maintain undo history between sessions
 set undodir^=$HOME/.vim/backup/
+set backupdir^=$HOME/.vim/backup/
 set directory^=$HOME/.vim/backup/
 
 " tabs mit 4 Leerzeichen
@@ -122,17 +123,21 @@ endif
 " ######     Plugins     ######
 " #############################
 
-" powerline aktivieren
-" set rtp+=/usr/local/lib/python3.7/dist-packages/powerline/bindings/vim/
-" set laststatus=2
+" packadd indentLine
+packadd nerdtree
+packadd vim-airline
+" packadd vim-devicons
+packadd vim-gitgutter
+" packadd vim-polyglot
 
 " NERDtree
-" map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 " fzf keybind
-" map ; :FZF
+map ; :FZF
 
 " theme
 if &t_Co > 15 || has("gui_running")
+  packadd gruvbox
   colorscheme gruvbox
   set background=dark
 endif

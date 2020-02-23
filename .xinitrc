@@ -34,4 +34,4 @@ fi
 
 $HOME/.fehbg &
 urxvtd -f &
-exec i3     # >> /home/daniel/.i3.log 2>&1
+exec i3 > $HOME/.i3.log 2>&1
