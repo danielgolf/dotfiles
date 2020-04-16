@@ -4,51 +4,53 @@
 "   \ V /  | || |  | |
 "    \_/  |___|_|  |_|
 "
+" @author danielgolf
 "==========================
 
 " #############################
 " ######  General Stuff  ######
 " #############################
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+set nocompatible                    " use vim settings rather then vi settings, must be first line
 
 set encoding=UTF-8                  " use UTF-8
+set ffs=unix,dos,mac                " use unix as the standard file type
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
-set number relativenumber           " Zeilen relativ nummerieren
 
-set splitright                      " always split on the right site
-set history=100		                " keep 50 lines of command line history
+set number relativenumber           " relativ line numbers
+set splitbelow splitright           " splits at the bottom and right
+
+" set cul                             " highlight line number
+set lbr                             " break lines that are longer than...
+set tw=200                          " ...200 characters
+set so=5                            " try to keep lines before and after the cursor
+set mat=2                           " how many tenths of a second to blink
 set ruler		                    " show the cursor position all the time
 set showcmd		                    " display incomplete commands
+set showmatch                       " show matching brackets when cursor is over them
 set incsearch		                " do incremental searching
 set ignorecase                      " ignore case when searching
-set so=5                            " try to keep lines before and after the cursor
+set matchpairs+=<:>                 " add a pair of brackets to jump with '%'
+
+set history=100		                " keep 50 lines of command line history
 set noerrorbells                    " no annoying sounds on errors
-set ffs=unix,dos,mac                " use unix as the standard file type
-set updatetime=100                  " gitgutter
-set timeoutlen=1000
-set ttimeoutlen=5
-" set cul
+set updatetime=100                  " needed for gitgutter
+set clipboard=unnamedplus           " use system clipboard instead of primary
 
-set showmatch                       " show matching brackets when cursor is over them
-set mat=2
-set matchpairs+=<:>
+" tab settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
-set lbr                             " Linebreak on 500 characters
-set tw=200
-
-" metadateien in speichern
+" backup settings
 set undofile                        " Maintain undo history between sessions
 set undodir^=$HOME/.vim/backup/
 set backupdir^=$HOME/.vim/backup/
 set directory^=$HOME/.vim/backup/
 
-" tabs mit 4 Leerzeichen
-set tabstop=4
-set shiftwidth=4
-set expandtab
+" ##############################
+" ######   Key Settings   ######
+" ##############################
 
 " disable arrow keys
 noremap <Up> <Nop>
@@ -56,18 +58,16 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-inoremap jj <ESC>
-
-" #############################
-" ######  Special Stuff  ######
-" #############################
-
-" Don't use Ex mode, use Q for formatting
+" don't use Ex mode, use Q for formatting
 map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
+
+" #################################
+" ######  Conditional Stuff  ######
+" #################################
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -105,11 +105,9 @@ if has("autocmd")
     \ endif
 
   augroup END
-
 else
   set autoindent		" always set autoindenting on
 endif " has("autocmd")
-
 
 if has('langmap') && exists('+langnoremap')
   " Prevent that the langmap option applies to characters that result from a
@@ -118,26 +116,31 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
+" ########################################
+" ######     Plugins and Themes     ######
+" ########################################
 
-" #############################
-" ######     Plugins     ######
-" #############################
-
-" packadd indentLine
-packadd nerdtree
-packadd vim-airline
-" packadd vim-devicons
-packadd vim-gitgutter
-" packadd vim-polyglot
+call plug#begin('~/.vim/plugged')
+" Plug 'morhetz/gruvbox'
+" Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'ryanoasis/vim-devicons', { 'on': 'NERDTreeToggle' }
+call plug#end()
 
 " NERDtree
-map <C-n> :NERDTreeToggle<CR>
-" fzf keybind
-map ; :FZF
+map <C-n> :NERDTreeToggle<Return>
 
-" theme
-if &t_Co > 15 || has("gui_running")
-  packadd gruvbox
-  colorscheme gruvbox
-  set background=dark
-endif
+" fzf keybind
+map ; :FZF 
+
+" airline settings
+" let g:airline_theme='gruvbox'
+let g:airline_symbols_ascii=1
+" let g:airline#extensions#tabline#enabled=1
+
+" gruvbox theme
+" colorscheme gruvbox
+" set background=dark

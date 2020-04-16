@@ -1,19 +1,32 @@
 if [ -x /usr/bin/dircolors ]; then
-    # zeige durch ls immer alle Dateien als Liste an
-    alias ls='ls -lhA --color=auto --group-directories-first'
+    alias exa='exa -lat modified --git --color=auto --group-directories-first'
+    alias ls='exa'
+    alias l='exa'
 fi
 
 # damit jeder alias auch als root funktioniert
 alias sudo='sudo '
-alias rm='rm -I'
 
 # orte
 alias ..='cd ../'
 alias ...='cd ../../'
 
-# programme
+# shortcuts
+alias f='fzf'
+alias g='git'
+alias v='vim'
+alias r='ranger'
+alias vf='vim $(fzf)'
+
+#programme
+alias vi='vim'
+alias df="df -Th"
+alias rm='rm -I'
+alias mv='mv -i'
 alias top='htop'
+alias tree='exa -T'
 alias diff='colordiff'
+alias xclip='xclip -sel c'
 
 # usb
 alias mount='udisksctl mount -b'
@@ -33,4 +46,4 @@ alias commit='git commit -m'
 alias log='git log'
 alias status='git status'
 alias checkout='git checkout'
-alias branch='git branch -v'
+alias branch='git branch -av'

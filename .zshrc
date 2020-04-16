@@ -12,12 +12,12 @@ export ZSH="/home/pi/.oh-my-zsh"
 export DEFAULT_USER="pi"
 
 # user zsh prompt for virtualenv
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+# export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # command counter
-setopt PROMPT_SUBST
-[[ $cmdcount -ge 1 ]] || cmdcount=1
-preexec() { ((cmdcount++)) }
+# setopt PROMPT_SUBST
+# [[ $cmdcount -ge 1 ]] || cmdcount=1
+# preexec() { ((cmdcount++)) }
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -78,7 +78,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    # colored-man-pages
+    colored-man-pages
     virtualenv
     history
     # vi-mode
@@ -117,10 +117,6 @@ export EDITOR='vim'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-# enable vim modes
-# bindkey -v
-# export KEYTIMEOUT=1
 
 # nice system info
 # pfetch

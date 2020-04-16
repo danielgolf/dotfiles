@@ -21,38 +21,38 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 !! ### colors ###
 ! special
-urxvt.foreground: #cecfc9
-urxvt.background: #1f2430 
-urxvt.cursorColor: #cbccc6
+urxvt.foreground: #ebdbb2
+urxvt.background: #282828 
+urxvt.cursorColor: #ebdbb2
 
 ! black
-urxvt.color0: #002b36
-urxvt.color8: #657b83
+urxvt.color0: #282828
+urxvt.color8: #3c3836
 
 ! red
-urxvt.color1: #dc322f
-urxvt.color9: #dc322f
+urxvt.color1: #fb4934
+urxvt.color9: #cc241d
 
 ! green
-urxvt.color2: #86b300
-urxvt.color10: #86b300
+urxvt.color2: #b8bb26
+urxvt.color10: #98971a
 
 ! yellow
-urxvt.color3: #b58900
-urxvt.color11: #b58900
+urxvt.color3: #d79921
+urxvt.color11: #fabd2f
 
 ! blue
-urxvt.color4: #399ee6
-urxvt.color12: #399ee6
+urxvt.color4: #83a598
+urxvt.color12: #458588
 
 ! magenta
-urxvt.color5: #a37acc
-urxvt.color13: #a37acc
+urxvt.color5: #d3869b
+urxvt.color13: #b16286
 
 ! cyan
-urxvt.color6: #4cbf99
-urxvt.color14: #4cbf99
+urxvt.color6: #8ec07c
+urxvt.color14: #689d6a
 
 ! white
-urxvt.color7: #cbccc6
-urxvt.color15: #cbccc6
+urxvt.color7: #ebdbb2
+urxvt.color15: #fbf1c7
