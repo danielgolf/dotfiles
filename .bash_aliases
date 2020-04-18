@@ -26,7 +26,7 @@ alias mv='mv -i'
 alias top='htop'
 alias tree='exa -T'
 alias diff='colordiff'
-alias xclip='xclip -sel c'
+# alias xclip='xclip -sel c'
 
 # usb
 alias mount='udisksctl mount -b'
